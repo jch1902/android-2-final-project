@@ -28,6 +28,11 @@ public class car_activity extends AppCompatActivity {
     }
 
     private void setUpNavView() {
-        //TODO
+        BottomNavigationView bottomNavigationView = findViewById(R.id.ai_bottom_nav_view);
+
+        NavController navController = Navigation
+                .findNavController(this, R.id.ai_nav_host);
+
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }

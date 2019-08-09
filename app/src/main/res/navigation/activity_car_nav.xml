@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_meal_nav"
+            app:startDestination="@id/carFragment">
+
+    <fragment android:id="@+id/carFragment" android:name="com.ucsdextandroid2.android2final.CarFragment"
+              android:label="car_list" tools:layout="@layout/car_list"/>
+
+    <fragment android:id="@+id/cartFragment" android:name="com.ucsdextandroid2.android2final.CartFragment"
+              android:label="CartFragment"/>
+
+
+</navigation>
