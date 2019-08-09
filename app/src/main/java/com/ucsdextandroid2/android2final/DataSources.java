@@ -13,7 +13,7 @@ import retrofit2.http.GET;
 import java.util.Collections;
 import java.util.List;
 
-public class DataSources {
+public class DataSources{
     public static DataSources instance;
     private DataAPI dataAPI;
 
@@ -37,9 +37,25 @@ public class DataSources {
         return instance;
     }
     public void getCars (Callback<List<Car>> callback){
+        dataAPI.getCars().enqueue(new retrofit2.Callback<carHolder>(){
+            @Override
+            public void onResponse(Call<carHolder> call, Response<carHolder> response) {
+                if(response.isSuccessful())
+                    callback.onDataFetched(response.body().getCars());
+                else
+                    callback.onDataFetched(Collections.emptyList());
+            }
 
+            @Override
+            public void onFailure(Call<carHolder> call, Throwable t) {
+                callback.onDataFetched(Collections.emptyList());
+            }
+        });
     }
     public interface Callback<T>{
         void onDataFetched(T data);
+    }
+    private interface DataAPI{
+        Call<carHolder> getCars();
     }
 }
