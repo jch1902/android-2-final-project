@@ -19,7 +19,7 @@ public class ListViewHolder {
                 .inflate(R.layout.viewholder, parent, false));
     }
     private ListViewHolder(@NonNull View itemView ){
-        super (itemView);
+        super(itemView);
 
         imageView = itemView.findViewById(R.id.vsi_image);
         titleView = itemView.findViewById((R.id.vsi_title));
@@ -35,8 +35,8 @@ public class ListViewHolder {
     public void bind (Car car){
         this.currentCar = car;
 
-        Picasso.get().load(currentCar.getPhoto()).into(imageView);
-        titleView.setText(currentCar.getCarName());
+ //       Picasso.get().load(currentCar.getPhoto()).into(imageView);
+        titleView.setText(currentCar.getCarClass() + " " + currentCar.getCarType() + " " + currentCar.getCarDesign());
     }
     public void setClickListener(OnItemClickListener<Car>clickListener){
         this.clickListener = clickListener;

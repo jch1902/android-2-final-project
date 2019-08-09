@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarAdapter{
+public class CarAdapter extends RecyclerView.Adapter<ListViewHolder>{
     private List<? extends Car>items = new ArrayList<>();
     private OnItemClickListener<Car> onItemClickListener;
 

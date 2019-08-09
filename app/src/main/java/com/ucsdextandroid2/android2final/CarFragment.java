@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class CarFragment extends Fragment {
 
@@ -33,6 +36,17 @@ public class CarFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.am_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(carAdapter);
-        //TODO
+        carAdapter.setOnItemClickListener(new OnItemClickListener<Car>() {
+            @Override
+            public void onItemClicked(Car item) {
+
+            }
+        });
+        DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
+            @Override
+            public void onDataFetched(List<Car> data) {
+                carAdapter.submitList(data);
+            }
+        });
     }
 }
