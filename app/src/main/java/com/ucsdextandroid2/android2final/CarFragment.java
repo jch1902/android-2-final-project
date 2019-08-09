@@ -42,7 +42,8 @@ public class CarFragment extends Fragment {
 
             }
         });
-        //Everything works fine up until this method
+        //Everything works up until here
+        //Works fine up until .getCars() and below
         DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
             @Override
             public void onDataFetched(List<Car> data) {
