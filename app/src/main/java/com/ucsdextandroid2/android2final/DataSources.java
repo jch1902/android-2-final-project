@@ -24,7 +24,7 @@ public class DataSources{
         logger.level(HttpLoggingInterceptor.Level.BODY);
 
         this.dataAPI = new Retrofit.Builder()
-                .baseUrl("https://api.mercedes-benz.com/tryout/vehicle_images/v1")
+                .baseUrl("https://api.mercedes-benz.com/tryout/vehicle_images/v1/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(new OkHttpClient.Builder().addInterceptor(logger).build())
                 .build()

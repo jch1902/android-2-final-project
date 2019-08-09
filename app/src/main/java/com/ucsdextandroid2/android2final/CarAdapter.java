@@ -29,7 +29,9 @@ public class CarAdapter extends RecyclerView.Adapter<ListViewHolder>{
     public void setOnItemClickListener(OnItemClickListener<Car>onItemClickListener){
         this.onItemClickListener = onItemClickListener;
     }
-    private Car getItem(int position){return items.get(position);}
+    private Car getItem(int position){
+        return items.get(position);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
