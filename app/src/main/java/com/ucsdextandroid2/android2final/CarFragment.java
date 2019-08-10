@@ -42,6 +42,12 @@ public class CarFragment extends Fragment {
 
             }
         });
+
+        getAPIdata();
+
+
+    }
+    private void getAPIdata(){
         //Everything works up until here
         //Works fine up until .getCars() and below
         DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
