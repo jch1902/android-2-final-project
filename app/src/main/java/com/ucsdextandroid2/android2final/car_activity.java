@@ -17,20 +17,18 @@ import java.util.List;
 
 public class car_activity extends AppCompatActivity {
 
-    private CarAdapter carAdapter;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car);
 
-        DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
-            @Override
-            public void onDataFetched(List<Car>data){
-                Log.d("test","Cars:" + data.size());
-            }
-        });
+//        DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
+//            @Override
+//            public void onDataFetched(List<Car>data){
+//                Log.d("test","Cars:" + data.size());
+//            }
+//        });
 
         setUpNavView();
     }
