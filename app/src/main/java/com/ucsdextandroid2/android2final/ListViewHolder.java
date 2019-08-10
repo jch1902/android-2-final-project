@@ -37,7 +37,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
         this.currentCar = car;
 
  //       Picasso.get().load(currentCar.getPhoto()).into(imageView);
-        titleView.setText(currentCar.getCarClass() + " " + currentCar.getCarType() + " " + currentCar.getCarDesign());
+        titleView.setText(currentCar.getMfrName() + " " + currentCar.getVType());
     }
     public void setClickListener(OnItemClickListener<Car>clickListener){
         this.clickListener = clickListener;

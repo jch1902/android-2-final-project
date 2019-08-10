@@ -24,7 +24,7 @@ public class DataSources{
         logger.level(HttpLoggingInterceptor.Level.BODY);
 
         this.dataAPI = new Retrofit.Builder()
-                .baseUrl("https://api.mercedes-benz.com/tryout/vehicle_images/v1/")
+                .baseUrl("https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(new OkHttpClient.Builder().addInterceptor(logger).build())
                 .build()
@@ -56,6 +56,7 @@ public class DataSources{
         void onDataFetched(T data);
     }
     private interface DataAPI{
+        @GET("filter.merc?format=json")
         Call<carHolder> getCars();
     }
 }

@@ -1,6 +1,7 @@
 package com.ucsdextandroid2.android2final;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,13 @@ public class car_activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car);
+
+        DataSources.getInstance().getCars(new DataSources.Callback<List<Car>>() {
+            @Override
+            public void onDataFetched(List<Car>data){
+                Log.d("test","Cars:" + data.size());
+            }
+        });
 
         setUpNavView();
     }
