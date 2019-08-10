@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName
 @Entity
 class Car(
 
-    @field:SerializedName("MakeName")
+    @field:SerializedName("Make_Name")
     @PrimaryKey
-    @ColumnInfo(name = "MakeName")
+    @ColumnInfo(name = "Make_Name")
     var mfrName: String,
 
-    @field:SerializedName("VehicleTypeName")
-    @ColumnInfo(name = "VehicleTypeName")
+    @field:SerializedName("Model_Name")
+    @ColumnInfo(name = "Model_Name")
     var vType: String
 
 
