@@ -56,7 +56,7 @@ public class DataSources{
         void onDataFetched(T data);
     }
     private interface DataAPI{
-        @GET("filter.honda?format=json")
+        @GET("honda?format=json")
         Call<carHolder> getCars();
     }
 }
